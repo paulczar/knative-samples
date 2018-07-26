@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
-  name: app-from-source
+  name: petclinic-src-to-run
   namespace: default
 spec:
   runLatest:
@@ -10,15 +10,15 @@ spec:
         serviceAccountName: build-bot
         source:
           git:
-            url: https://github.com/paulczar/hello-spinnaker-demo.git
-            revision: master
+            url: https://github.com/paulczar/spring-petclinic.git
+            revision: docker-build-docs
         template:
           name: kaniko
           arguments:
           - name: IMAGE
-            value: &image docker.io/paulczar/hello-spinnaker-demo:latest
+            value: docker.io/paulczar/spring-petclinic:latest
       revisionTemplate:
         spec:
           container:
-            image: *image
+            image: docker.io/paulczar/spring-petclinic:latest
             imagePullPolicy: Always
