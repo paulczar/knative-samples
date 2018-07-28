@@ -77,6 +77,15 @@ After a few minutes you should be able to see the build logs (use the pod name f
 
 ```bash
 $ kubectl -n build-petclinic logs -f build-petclinic-prw8j -c build-step-build-and-push
+time="2018-07-28T19:09:05Z" level=info msg="Unpacking filesystem of maven:3.5-jdk-8-alpine..."
+time="2018-07-28T19:09:05Z" level=info msg="Mounted directories: [/kaniko /var/run /proc /dev /dev/pts /sys /sys/fs/cgroup /sys/fs/cgroup/cpuset /sys/fs/cgroup/cpu /sys/fs/cgroup/cpuacct /sys/fs/cgroup/blkio /sys/fs/cgroup/memory /sys/fs/cgroup/devices /sys/fs/cgroup/freezer /sys/fs/cgroup/net_cls /sys/fs/cgroup/perf_event /sys/fs/cgroup/net_prio /sys/fs/cgroup/hugetlb /sys/fs/cgroup/pids /dev/mqueue /workspace /builder/home /dev/termination-log /etc/resolv.conf /etc/hostname /etc/hosts /dev/shm /var/run/secrets/kubernetes.io/serviceaccount /proc/bus /proc/fs /proc/irq /proc/sys /proc/sysrq-trigger /proc/kcore /proc/timer_list /proc/timer_stats /proc/sched_debug /proc/scsi /sys/firmware]"
+time="2018-07-28T19:09:05Z" level=info msg="Unpacking layer: 6"
+time="2018-07-28T19:09:06Z" level=info msg="Unpacking layer: 5"
+...
+...
+2018/07/28 19:16:04 pushed blob sha256:dbbeffcc06abbacd5064d143c2550f37cbb288c27a2628fada13806b2bc38505
+index.docker.io/paulczar/spring-petclinic:latest: digest: sha256:32e4cb3bf0c37495a428734c0b1ed205b7926e9f1d021068f3bbce97c26177de size: 1077
+
 ```
 
 ## Run Petclinic
