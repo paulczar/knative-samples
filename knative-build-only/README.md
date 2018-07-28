@@ -44,6 +44,10 @@ svc/build-webhook      ClusterIP   10.100.200.77   <none>        443/TCP    25s
 
 ## Build Petclinic
 
+Edit the file [build/build-petclinic-secret.yaml](build/build-petclinic-secret.yaml) to contain your docker registry username and password (base64 encoded).
+
+Edit the file [build/build-petclinic.yaml](build/build-petclinic.yaml) to use your docker registry username.
+
 Deploy the components for building your app to the `petclinic-build` namespace:
 
 ```bash

@@ -23,3 +23,4 @@ The examples here deploy the Spring Pet Clinic example application.
 
 * [Run a prebuild image](run/README.md)
 * [Build and Run from Source](src-to-run/README.md)
+* [Only use the Build service](knative-build-only/README.md)

@@ -17,4 +17,4 @@ spec:
     arguments:
     - name: IMAGE
       # update this with your docker registry image
-      value: docker.io/paulczar/spring-petclinic:latest
+      value: docker.io/<username>/spring-petclinic:latest
