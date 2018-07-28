@@ -1,0 +1,20 @@
+apiVersion: build.knative.dev/v1alpha1
+kind: Build
+metadata:
+  name: build-petclinic
+  namespace: build-petclinic
+  labels:
+    expect: succeeded
+spec:
+  serviceAccountName: build-petclinic
+  source:
+    git:
+      # update this URL with your repo
+      url: https://github.com/paulczar/spring-petclinic.git
+      revision: docker-build-docs
+  template:
+    name: build-petclinic
+    arguments:
+    - name: IMAGE
+      # update this with your docker registry image
+      value: docker.io/paulczar/spring-petclinic:latest

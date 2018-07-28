@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: petclinic
+  name: petclinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: petclinic
+  template:
+    metadata:
+      labels:
+        run: petclinic
+    spec:
+      containers:
+      - image: paulczar/spring-petclinic:latest
+        name: petclinic
